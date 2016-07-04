@@ -68,5 +68,15 @@ config.vm.define "idp" do |config|
 
    end
 
+   # Oh boy, here we go
+ config.vm.define "pass" do |config|
+      config.vm.hostname="pass.example.com"
+      config.vm.network "private_network", ip: "172.16.80.5"
+      config.vm.synced_folder "#{current_dir}" , "/vagrant"
+      config.vm.provision "install", type: "shell", path: "pass/install.sh"
+      config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "512"]
+      end
+  end
 
 end
