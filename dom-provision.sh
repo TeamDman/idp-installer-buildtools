@@ -21,4 +21,3 @@ fi
 echo "Bringing up pwm"
 	vagrant up pass --no-provision
 	vagrant provision pass --provision-with base,install
-read
