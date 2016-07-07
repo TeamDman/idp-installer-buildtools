@@ -19,5 +19,5 @@ else
 fi
 
 echo "Bringing up pwm"
-	vagrant up pass --no-provision
-	vagrant provision pass --provision-with base,install
+	vagrant up accounts --no-provision
+	vagrant provision accounts --provision-with base,install

@@ -15,6 +15,7 @@ mv pwm.war /var/lib/tomcat8/webapps/pwm.war
 service tomcat8 restart
 cd /var/lib/tomcat8/webapps/pwm/WEB-INF
 rm web.xml
-curl -o "web.xml" "https://raw.githubusercontent.com/TeamDman/idp-installer-buildtools/master/web.xml"
+# curl -o "web.xml" "https://raw.githubusercontent.com/TeamDman/idp-installer-buildtools/master/web.xml"
+cp /vagrant/accounts/web.xml.template web.xml
 service tomcat8 restart
-echo "pwm installed, navigate to [http://pass.example.com:8080/pwm/config/ConfigManager]"
+echo "pwm installed, navigate to [http://accounts.example.com:8080/pwm/config/ConfigManager]"
