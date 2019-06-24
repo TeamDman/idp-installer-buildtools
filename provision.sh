@@ -40,6 +40,7 @@ echo "Bringing up the IdP"
 	echo "${PROVMSG}"
 	vagrant provision idp --provision-with base,install
 
+# dom-provision.sh
 
 echo "Establishing trust for the SP to trust the IdP"
 	vagrant provision sp --provision-with metadata-idp
