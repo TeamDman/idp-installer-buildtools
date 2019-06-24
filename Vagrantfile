@@ -20,7 +20,7 @@ fqinstallerpath = "#{current_dir}#{mybase}"
   
 
 #  config.vm.box = "centos/7"
-  config.vm.box = "kaorimatz/debian-8.3-amd64"
+  config.vm.box = "debian/stretch64"
   config.vm.provision "base",    type: "shell", path: "common/base.sh"
 
 
