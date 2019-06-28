@@ -15,6 +15,8 @@ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
      -out /etc/shibboleth/sp-cert.pem \
      -subj /CN=sp.example.com 2>/dev/null
 
+chmod go+r /etc/shibboleth/sp-key.pem
+
 mkdir -p /var/www/vhosts/sp.example.com
 
 echo -e "Setting placeholder index.html in /var/www/vhosts/sp.example.com"
@@ -33,6 +35,7 @@ cp /etc/shibboleth/shibboleth2.xml /etc/shibboleth/shibboleth2.xml.orig
 echo -e "ensuring example.com is properly shown"
 
 sed -i'' "s/example\.org/example\.com/" /etc/shibboleth/shibboleth2.xml
+
 
 xmlstarlet ed -L \
   -i "//_:Sessions" -t attr -n consistentAddress -v true \
